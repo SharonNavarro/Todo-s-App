@@ -6,7 +6,7 @@ import { TodoItem } from "./TodoItem.js";
 import { CreateTodoButton } from "./CreateTodoButton.js";
 
 const todos = [
-  { text: 'Cortar cebolla', completed: false },
+  { text: 'Cortar cebolla', completed: true },
   { text: 'Toamr curso', completed: false },
   { text: 'Llorar', completed: false }
 ];
@@ -18,9 +18,13 @@ function App() {
       {<TodoSearch />}
       {<TodoList>
         {todos.map(todo => (
-          <TodoItem key={todo.text} text={todo.text}/>
+          <TodoItem 
+          key={todo.text} 
+          text={todo.text} 
+          completed={todo.completed}
+          />
         ))}
-        </TodoList>}
+      </TodoList>}
       {<CreateTodoButton />}
     </React.Fragment>
   )
